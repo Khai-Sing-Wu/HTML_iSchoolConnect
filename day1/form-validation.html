@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+    <style>
+        label{
+            display: inline-block;
+            width: 80px;
+            padding: 5px;
+        }
+        button{
+            margin-left: 94px;
+        }
+    </style>
+    <script>
+        function init()
+        {
+           
+            var uage=document.getElementById("uage");
+            uage.setCustomValidity("Enter your age");
+            uage.addEventListener("input", function()
+            {
+                if(uage.value =='')
+                {
+                    uage.setCustomValidity("Please enter your age");
+                }
+                else if(uage.value < 18)
+                {
+                    uage.setCustomValidity("Too young");
+                }else if(uage.value > 90)
+                {
+                    uage.setCustomValidity("Too old");
+                }else if(uage.value == null)
+                {
+                    uage.setCustomValidity("Please enter your age");
+                }else{
+                    uage.setCustomValidity("");
+                }
+            });
+
+            var uname=document.getElementById("uname");
+            uname.setCustomValidity("Enter your name");
+            uname.addEventListener("input", function()
+            {
+                if(uname.value =='')
+                {
+                    uname.setCustomValidity("Please enter your name");
+                }
+                else{
+                    uname.setCustomValidity("");
+                }
+            });
+
+            var umail=document.getElementById("umail");
+            umail.setCustomValidity("Enter your mail");
+            umail.addEventListener("input", function()
+            {
+                if(umail.value =='')
+                {
+                    umail.setCustomValidity("Please enter your mail");
+                }
+               else{
+                    umail.setCustomValidity("");
+                }
+            });
+
+        }
+        onload=init;
+    </script>
+</head>
+<body>
+    <form action="#" method="get">
+        <div>
+            <label for="uname">User Name</label>
+            <input required name="username" id="uname"/>
+        </div>
+        <div>
+            <label for="uage">User Age</label>
+            <input type="number" name="userage" id="uage"/>
+        </div>
+        <div>
+            <label for="umail">User Mail</label>
+            <input required pattern=".*@.*" name="usermail" id="umail"/>
+        </div>
+        <div>
+            <label for="utel">User Phone</label>
+            <input required title="###-####-####" placeholder="###-####-####" pattern="\d{3}-\d{4}-\d{4}" name="usertel" id="utel"/>
+        </div>
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>
