@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <style>
+        label{
+            display: inline-block;
+            width: 80px;
+            padding: 5px;
+        }
+        button{
+            margin-left: 94px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        addEventListener("load",init);
+        function init(){
+           document.getElementById("save-button").addEventListener("click",saveData);
+           document.getElementById("show-button").addEventListener("click",showData);
+           document.getElementById("clear-button").addEventListener("click",clearData);
+           document.getElementById("remove-button").addEventListener("click",removeData);
+           document.getElementById("key-button").addEventListener("click",fetchKey);
+           document.getElementById("length-button").addEventListener("click",count);
+           
+        }
+
+
+        function saveData(){
+            localStorage.setItem("userName",document.getElementById("name").value);
+            localStorage.setItem("userAge",document.getElementById("age").value);
+            localStorage.setItem("userPhone",document.getElementById("phone").value);
+
+        }
+
+        function showData(){
+            
+            document.getElementById("uname").textContent = "User Name : " + localStorage.getItem("userName");
+            document.getElementById("uage").textContent = "User Age : " + localStorage.getItem("userAge");
+            document.getElementById("uphone").textContent = "User Phone : " + localStorage.getItem("userPhone");
+            
+        }
+        function clearData(){
+            
+           localStorage.clear();
+           showData();            
+        }
+        function removeData(){
+            localStorage.removeItem(document.getElementById("remove").value);
+            showData();
+            count();
+        }
+
+        function fetchKey(){
+            document.getElementById("ukey").textContent = "Fetched key of given index : "  + localStorage.key(document.getElementById("key").value);
+        }
+        function count(){
+            document.getElementById("ulen").textContent = "Count of stored data : " + localStorage.length;
+        }
+        
+    </script>
+</head>
+<body>
+   
+    <div>
+        <div>
+            <label for="name">Name :</label>
+            <input id="name"/>
+        </div>
+        <div>
+            <label for="age">Age :</label>
+            <input type="number" id="age" min=0 max =100/>
+        </div>
+        <div>
+            <label for="phone">Phone :</label>
+            <input title="###-####-####" placeholder="###-####-####" pattern="\d{3}-\d{4}-\d{4}" id="phone"/>
+        </div>
+
+        <button id="save-button">Save User Data</button>
+        <br>
+        <button id="show-button">Show User Data</button>
+        <br>
+        <button id="clear-button">clear User Data</button>
+        <br>
+        <button id="length-button">show count</button>
+        
+        
+        <div>
+            <br>
+            <input id="key" type="number"  min=0 max=2 placeholder="Enter index: 0/1/2" style="width: 120px"/>
+            <br>
+            <button id="key-button">fetch selected Data</button>
+        </div>
+        <div>
+            <br>
+            <input id="remove" type="text" placeholder="Enter name from fetch key"/>
+            <br>
+            <button id="remove-button">remove selected data</button>
+        </div>
+        
+
+    </div>
+    
+    <div>
+        <p id="uname"></p>
+        <p id="uage"></p>
+        <p id ="uphone"></p>
+        <p id ="ukey"></p>
+        <p id ="ulen"></p>
+
+    <div>
+</body>
+</html>
