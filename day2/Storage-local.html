@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage-local</title>
+    <style>
+        div{
+            display: block;
+            padding: auto;
+        }
+    </style>
+    <script>
+        addEventListener("load",init);
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", clickHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", getHandler);
+
+        }
+        function clickHandler(){
+            localStorage.user = document.getElementById("ti").value;
+        }
+
+        function getHandler(){
+            alert("User is : " + localStorage.user);
+        }        
+    </script>
+</head>
+<body>
+    <div>
+        <input id="ti" type="text"/>
+        <br>
+        <br>
+        <button>Store User</button>
+        <button>Get User Name</button>
+    </div>
+    
+            
+</body>
+</html>
