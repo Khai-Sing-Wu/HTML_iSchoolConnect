@@ -8,19 +8,17 @@
     <script type="text/javascript" src="ntc.js"></script>
 
     <script>
-        function setInputValue(source,target)
-        {
+        function setInputValue(source,target){
             document.getElementById(target).textContent = source.value;
-            if(target=="color")
-            {
+            if(target=="color"){
                 showColorName(source,target);
             }
         }
-        function showColorName(source,target)
-        {
+        function showColorName(source,target){
             var clr = ntc.name(source.value);
             var name = clr[1];
-            document.getElementById(target).innerHTML = name;
+            document.getElementById(target).textContent = name;
+            document.getElementById(target).style.color = source.value;
         }
     </script>
 </head>
