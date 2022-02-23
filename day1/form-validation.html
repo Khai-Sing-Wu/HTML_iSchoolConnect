@@ -16,25 +16,20 @@
         }
     </style>
     <script>
-        function init()
-        {
+        function init(){
            
             var uage=document.getElementById("uage");
             uage.setCustomValidity("Enter your age");
             uage.addEventListener("input", function()
             {
-                if(uage.value =='')
-                {
+                if(uage.value ==''){
                     uage.setCustomValidity("Please enter your age");
                 }
-                else if(uage.value < 18)
-                {
+                else if(uage.value < 18){
                     uage.setCustomValidity("Too young");
-                }else if(uage.value > 90)
-                {
+                }else if(uage.value > 90){
                     uage.setCustomValidity("Too old");
-                }else if(uage.value == null)
-                {
+                }else if(uage.value == null){
                     uage.setCustomValidity("Please enter your age");
                 }else{
                     uage.setCustomValidity("");
@@ -45,8 +40,7 @@
             uname.setCustomValidity("Enter your name");
             uname.addEventListener("input", function()
             {
-                if(uname.value =='')
-                {
+                if(uname.value ==''){
                     uname.setCustomValidity("Please enter your name");
                 }
                 else{
@@ -58,8 +52,7 @@
             umail.setCustomValidity("Enter your mail");
             umail.addEventListener("input", function()
             {
-                if(umail.value =='')
-                {
+                if(umail.value ==''){
                     umail.setCustomValidity("Please enter your mail");
                 }
                else{
