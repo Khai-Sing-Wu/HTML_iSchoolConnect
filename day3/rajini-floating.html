@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        canvas{
+            border: 1px solid grey; 
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <script>
+        addEventListener("load",init);
+        var can, ctx, boxX=0,boxD=100, boxY=0, dir = 1;
+        var img = new Image();
+        img.src= "images/rajani.jpg";  
+        function init(){
+            can = document.getElementById("can");
+            can.width = 500;
+            can.height = 500;
+            ctx = can.getContext("2d");
+            setInterval(animationZ,10);
+        };
+        function horizontal(){
+            ctx.clearRect(0,0,500,500);
+            boxX++;
+            if(boxX > 400){
+                if(boxY==0){
+                    dir = 2;
+                }else{
+                    dir = 3;
+                }
+            }else{
+                ctx.drawImage(img,boxX,boxY,boxD,boxD);
+            }
+    
+        }
+        function diagonal1(){
+            ctx.clearRect(0,0,500,500);
+            boxX--;
+            boxY++;
+            if(boxY > 400 && boxX==0){
+                dir=1;
+            }else{
+                ctx.drawImage(img,boxX,boxY,boxD,boxD);
+            }
+    
+        }
+        function diagonal2(){
+            ctx.clearRect(0,0,500,500);
+            boxX--;
+            boxY--;
+            if(boxY < 0 || boxX==0){
+                dir=1;
+                animationZ();
+            }
+            else{
+                ctx.drawImage(img,boxX,boxY,boxD,boxD);
+            }   
+        }
+
+        function animationZ(){  
+                   
+            if(dir == 1){
+                horizontal();
+            }else if(dir==2){
+                diagonal1();
+            }else{
+                diagonal2();
+            }
+        }
+
+        
+    </script>
+</head>
+<body>
+    <canvas id="can"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>selectors</title>
+    <style>
+        /*Pseudo Class selector*/
+        p:hover{
+            background-color: cyan;
+        }
+        p:first-letter{ 
+            font-family: Impact;
+            font-size: 2em;
+        }
+        p:first-line{
+            background-color: beige;
+        }
+        a{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a:link{
+            background-color: cadetblue;
+            color: red;
+        }
+        a:visited{
+            background-color: palevioletred;
+            color: lemonchiffon;
+        }
+        a:hover{
+            background-color: chocolate;
+        }
+        /*Pseudo element selector*/
+        li:after{
+            content: " \\__(*o*)__/";
+            color:white;
+            background-color: purple;
+            display: inline-block;
+        }
+        /*Dynamic Pseudo class selectors*/
+        input:hover{
+            background-color: aqua;
+        }
+
+        input:focus{
+            background-color: coral;
+        }
+        input:active{
+            background-color: darkviolet;
+        }
+        /*Language Pseduo Selector*/
+        p:lang(en){
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        p:lang(fr){
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        /*Adjacent sibling selector
+        ul+p{
+            border: 10px dotted red;
+        }
+        General Sibling*/
+        ul ~{
+            border: 10px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    <a>Dummy link tag</a>
+    <br>
+    <a href="https://xyz.com">Unvisted link tag</a>
+    <br>
+    <a href="https://www.google.com">Visited link tag</a>
+    <br>
+    <a>Mouse Over link tag</a>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus aut esse blanditiis dicta saepe tenetur a nesciunt est cupiditate? Quae cumque aut, velit esse voluptate neque sequi incidunt nemo ullam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime nisi earum sit minima, dolorem eos? Quidem, perspiciatis cum ad unde quae magni explicabo dolore earum voluptatem voluptas fugit! Ratione.
+    </p>
+    <p lang="en">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus aut esse blanditiis dicta saepe tenetur a nesciunt est cupiditate? Quae cumque aut, velit esse voluptate neque sequi incidunt nemo ullam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime nisi earum sit minima, dolorem eos? Quidem, perspiciatis cum ad unde quae magni explicabo dolore earum voluptatem voluptas fugit! Ratione.
+    </p>
+    <p lang="fr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus aut esse blanditiis dicta saepe tenetur a nesciunt est cupiditate? Quae cumque aut, velit esse voluptate neque sequi incidunt nemo ullam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime nisi earum sit minima, dolorem eos? Quidem, perspiciatis cum ad unde quae magni explicabo dolore earum voluptatem voluptas fugit! Ratione.
+    </p>
+
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+    <hr>
+    <input type="text"/>
+    <br>
+    <input type="text"/>
+    <br>
+    <input type="text"/>
+    <br>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus aut esse blanditiis dicta saepe tenetur a nesciunt est cupiditate? Quae cumque aut, velit esse voluptate neque sequi incidunt nemo ullam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime nisi earum sit minima, dolorem eos? Quidem, perspiciatis cum ad unde quae magni explicabo dolore earum voluptatem voluptas fugit! Ratione.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus aut esse blanditiis dicta saepe tenetur a nesciunt est cupiditate? Quae cumque aut, velit esse voluptate neque sequi incidunt nemo ullam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime nisi earum sit minima, dolorem eos? Quidem, perspiciatis cum ad unde quae magni explicabo dolore earum voluptatem voluptas fugit! Ratione.
+    </p>
+</body>
+</html>
