@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        /*
+        justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly, start, end , left , right
+        */
+        section{
+            background-color: darkslategrey;
+            display: flex;
+            height: 400px;
+            /* flex-direction: column-reverse; */
+            justify-content: end;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            font-family: "Trebuchet MS";
+            text-align: center;
+            line-height: 100px;
+            font-size: 36px;
+            flex-basis: 150px;
+            /*
+            flex: grow shrink basis
+            */
+            /* shorthand */
+        }
+        .box1{ 
+            background-color: violet; 
+            /* flex-grow: 1; */
+
+        }
+        .box2{ 
+            background-color: indigo; 
+            /* flex-shrink: 2; */
+        }
+        .box3{
+             
+            background-color: blue; 
+        }
+        .box4{
+             
+            background-color: green; 
+            /* flex-shrink: 0; */
+        }
+        .box5{
+             
+            background-color: yellow; 
+        }
+        .box6{ 
+            background-color: orange; 
+        }
+        .box7{ 
+            background-color: red; 
+        }
+        .box8{ 
+            background-color: white; 
+            /* flex-grow: 2; */
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <section>
+        <article class="box box1">1</article>
+        <article class="box box2">2</article>
+        <article class="box box3">3</article>
+        <article class="box box4">4</article>
+        <article class="box box5">5</article>
+        <article class="box box6">6</article>
+        <article class="box box7">7</article>
+        <article class="box box8">8</article>
+    </section>
+
+</body>
+</html>
