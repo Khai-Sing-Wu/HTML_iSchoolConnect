@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+           
+           background: rgb(35,34,41);
+           background: linear-gradient(317deg, rgba(35,34,41,0.9791666666666666) 8%, rgba(85,63,251,0.9675925925925926) 100%);
+           background-image: url("images/css.jpg");
+           /*
+           css.jpg is an external images used for background
+           */
+           background-size: cover;
+       }
+        .block-level{
+            padding: 10px;
+            border-radius: 60px 0px;
+            width: 1100px;
+            height: 220px;
+            background: rgb(50,27,162);
+            background: linear-gradient(288deg, rgba(50,27,162,0.9791666666666666) 8%, rgba(251,63,63,0.9675925925925926) 100%);
+            align-self: center;
+            position: absolute;
+            left: 400px;
+            top: 120px;
+            
+        }
+        a{
+            color:white;
+        }
+        section{
+            color: white
+        }
+
+        li{
+            padding: 10px;
+        }
+        .inline-level{
+            width: 1100px;
+            height: auto;
+            padding: 10px;
+            border-radius: 60px 0px;
+            background: rgb(29,232,11);
+            background: radial-gradient(circle, rgba(29,232,11,0.9791666666666666) 0%, rgba(251,100,63,0.9675925925925926) 100%);
+            position: absolute;
+            left: 400px;
+            top: 420px;
+        }
+        h1 , h2{
+            text-align: center;
+            color:white;
+            font-family: 'Times New Roman';
+            text-align: center;
+            margin-top: 30px;
+        }
+        .block-list{
+            display: inline-block;
+            height : 200px;
+            column-count: 10;
+        }
+        .inline-list{
+            display: inline-block;
+            height : 200px;
+            column-count: 10;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Block and Inline elements</h1>
+    <section class="block-level">
+        <h2>List of block level elements</h2>
+        <ol class="block-list">    
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address">Address</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">Aside</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">blockquote</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">details </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">Dialog</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd">dd or Description details</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">dl or Description list</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">dt or Description list term</a> </li>            
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset">fieldset </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption">figcaption </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure">figure </a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">footer</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1">h1-h6</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">header </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup">hgroup </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">hr </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li or List item </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">main </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">nav </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">ol</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">p</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre">pre </a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">table</a> </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">ul</a> </li>
+        </ol>
+    </section>
+    
+    <section class="inline-level">
+        <h2>List of inline elements</h2>
+        <ol class="inline-list">
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/abbr">abbr</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/a">acronym</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/audio">audio </a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/b">b</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/bdi">bdi</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/bdo">bdo</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/big">big</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/br">br</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/button">button</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/canvas">canvas</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/cite">cite</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/code">code</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/data">data</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/datalist">datalist</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/del">del</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/dfn">dfn</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/em">em</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/embed">embed</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/i">i</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/iframe">iframe</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/img">img</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/input">input</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/ins">ins</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/kbd">kbd</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/label">label</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/map">map</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/mark">mark</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/noscript">noscript</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/object">object</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/output">output</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/picture">picture</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/progress">progress</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/q">q</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/ruby">ruby</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/samp">samp</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/script">script</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/select">select</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/slot">slot</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/small">small</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/span">span</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/strong">strong</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/sub">sub</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/sup">sup</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/svg">svg</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/template">template </li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/textarea">textarea</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/time">time</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/u">u</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/tt">tt</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/var">var</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/video">video</a></li>
+           <li> <a href="https://developer.mozilla.org/en-US/docs/web/HTML/Element/wbr">wbr</a></li>
+        </ol>
+    </section>
+    </div>
+</body>
+</html>
