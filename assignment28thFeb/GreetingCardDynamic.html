@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card using Canvas</title>
+    <style>
+    canvas{
+        border: 1px solid darkslategray;
+        display: block;
+        margin: 0 auto;   
+        color: white;
+    }
+    label{
+            display: inline-block;
+            width: 80px;
+            padding: 5px;
+    }
+    button{
+        margin-left: 94px;
+    }
+    </style>
+    <script>
+        //
+        var can, ctx;
+        var x0=0, y0=0, x1=500, y1=800;
+        var bname, bage, bdate, count=1000;
+        
+        function getData(){
+            bname = document.getElementById("bname").value;
+            bdate = document.getElementById("bdate").value;
+
+            dob = new Date(bdate);
+
+            byear = dob.getFullYear();
+            curr = new Date();
+            currY= curr.getFullYear();
+            bage = Math.abs(currY - byear);
+            
+            can = document.getElementById("canvas");
+            ctx=canvas.getContext("2d");
+            
+            setInterval(launchCard,1500);
+            ctx.beginPath();
+        }
+       
+
+        function launchCard()
+        {
+            var gradient = ctx.createLinearGradient(0,0, 500, 800);
+            gradient.addColorStop(0,"blue");
+            gradient.addColorStop(0.6,"purple");
+            gradient.addColorStop(0.9,"black");
+            ctx.fillStyle= gradient;
+            ctx.fillRect(0,0,500,800);
+            addEventListener("click",drawStar);
+            ctx.font="30px Comic Sans MS";
+            var gradText = ctx.createLinearGradient(240, 100, 400, 580);
+            count--;
+            if(count%2 == 0){
+                gradText.addColorStop("0", "red");
+                gradText.addColorStop("0.5", "yellow");   
+                gradText.addColorStop("1.0", "white");
+                
+                }else{
+                gradText.addColorStop("0", "white");
+                gradText.addColorStop("0.5", "yellow");   
+                gradText.addColorStop("1.0", "red");
+                
+            }
+            
+            ctx.strokeStyle = gradText;
+            ctx.textAlign = "center";
+            ctx.strokeText("Wishing you",240,100);
+            ctx.strokeText("a", 240, 180);
+            ctx.strokeText("Happy Birthday", 240, 260);
+            ctx.strokeText(bname,240,340);
+            ctx.strokeText("on your",240,420);
+            ctx.strokeText(bage + "th",240,500);
+            ctx.strokeText("Birth Anniversary",240,580);
+            
+        }
+        function drawStar()
+        {
+            const rect = can.getBoundingClientRect()
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            ctx.beginPath();
+                ctx.moveTo(x,y);
+                ctx.lineTo(x-10,y+30);
+                ctx.lineTo(x-50,y+40);
+                ctx.lineTo(x-10,y+50);
+                ctx.lineTo(x,y+90); 
+                ctx.lineTo(x+10,y+50);
+                ctx.lineTo(x+50,y+40);
+                ctx.lineTo(x+10,y+30); 
+                ctx.lineTo(x,y); 
+                ctx.closePath();
+                ctx.stroke();
+                ctx.fillStyle="rgba(255,255,255,.5)";
+                ctx.fill();
+            
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="800"></canvas>
+    <main>
+        <div>
+            <label for="bname">Name</label>
+            <input required name="name" id="bname"/>
+        </div>
+        <div>
+            <label for="bdate">Birthday</label>
+            <input required type="date" name="date" id="bdate"/>
+        </div>
+
+        <button onclick="getData()">Submit</button>
+    </main>
+</body>
+</html>
