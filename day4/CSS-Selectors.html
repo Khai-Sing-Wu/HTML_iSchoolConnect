@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Selectors</title>
+    <style>
+        li:first-child{
+            color:blue;
+        }
+        li:last-child{
+            color:green;    
+        }
+        li:nth-child(2n+1){
+            color:brown;
+        }
+        li:nth-child(4n-1){
+            color:purple;
+        }
+        li:nth-child(even){
+            background-color:pink;
+        }
+        li:nth-child(3){
+            background-color: azure;
+        }
+
+        p:nth-of-type(2n) {
+        color: red;
+        }
+        p:nth-of-type(odd) {
+        color: green;
+        }
+        article:nth-last-child(1){
+            color:yellow;
+        }
+
+        span:nth-last-of-type(2) {
+        background-color: lime;
+        }
+
+        body:only-of-type{
+            color:grey;
+        }
+
+        input[type="checkbox"]:checked {
+            box-shadow: 0 0 0 3px hotpink;
+        }
+        input[type="checkbox"]:enabled{
+            box-shadow: 0 0 0 3px green;
+        }
+        input[type="checkbox"]:disabled{
+            box-shadow: 0 0 0 3px red;
+        }
+
+        ::selection{
+            color: white;
+            background: yellow;
+        }
+        :root{
+            border: 1px solid red;
+        }
+        #emp{
+            width: 100px;
+            height: 100px;
+        }
+        #emp:empty {
+            background: lime;
+        }
+
+        label:not(#opt-in1){
+            color:red;          
+        }
+
+        ul > li {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Children of hgroup</h1>
+            <h2>Children of hgroup</h2>
+        </hgroup>
+    </header>
+    <nav>
+        <ul>
+            <li> First Child of li </li>
+            <li> Second child of li </li>
+            <li> Second odd child of li </li>
+            <li> Second even child of li</li>
+            <li> Third odd child of li</li>
+            <li> Last child of li</li>
+        </ul>
+    <main>
+        <section>
+            <h2>About ISchoolConnect</h2>
+            <article>
+                <h3>Projects in the past</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+            </article>
+            <article class="art">
+                <h3>Upcoming Projects</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae incidunt minus enim, debitis praesentium ut modi magni rerum, dolore officia nulla. Id totam rem fugit iure, veritatis sit quas aliquid?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora omnis dicta tempore repellendus ex optio illo numquam asperiores nemo eius doloribus ducimus dolore, quisquam assumenda quo quae quasi exercitationem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iste aut sint. Ullam dolores voluptas, repellendus a quod atque fuga, excepturi maiores impedit veritatis, aspernatur porro eum expedita aut necessitatibus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse delectus porro repellendus aperiam odit explicabo est non omnis aspernatur ratione ut et assumenda rem illo saepe, molestiae laborum repudiandae inventore?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat neque nihil, illo amet sed animi repellendus ipsum quo officiis repellat dicta assumenda nulla quaerat delectus voluptatem aperiam temporibus numquam odio.
+                </p>
+            </article>
+            <div>
+                <span>This is a span.</span>
+                <span>This is another span.</span>
+                <em>This is emphasized.</em>
+                <span>Wow, this span gets limed!!!</span>
+                <del>This is struck through.</del>
+                <span>Here is one last span.</span>
+              </div>
+              <div id="emp"></div>
+              <div>
+                <input type="checkbox" name="my-checkbox1" id="opt-in1">
+                <label for="opt-in1">Check me!</label>
+              </div>
+              <div>
+                <input type="checkbox" name="my-checkbox2" id="opt-in2">
+                <label for="opt-in2">Check me!</label>
+              </div>
+              <div>
+                <input type="checkbox" name="my-checkbox3" id="opt-in3">
+                <label for="opt-in3">Check me!</label>
+              </div>
+              <div>
+
+              </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; copyrights reserved by ISchoolConnect India</p>
+    </footer>
+</body>
+</html>
