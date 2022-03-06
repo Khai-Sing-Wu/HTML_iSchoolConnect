@@ -5,14 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Methods</title>
+    <style>
+        section{
+            background-color: aquamarine;
+            width: fit-content;
+            padding: 10px;
+            margin: 100px auto;
+        }
+    </style>
     <script>
-        var str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates iusto dolorum consequuntur ipsam! Officiis rem ipsam voluptate ullam qui non quas quia, ipsum harum neque natus repellat delectus temporibus corrupti!";
-        document.getElementById("first").innerText = "The first character is "+ str;
+        addEventListener("load",function(){
+            var str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit.";
+            document.getElementById("zeroth").innerHTML = "The string is : " + str;
+            document.getElementById("first").innerText = "The first character is : " + str.charAt();
+            document.getElementById("second").innerText = "The tenth character is : " + str.charAt(9);
+            document.getElementById("third").innerText = "The second last character is : " + str.charAt(str.length - 2);
+            document.getElementById("fourth").innerText = "The substring containing last 10 chars is : " + str.substring(str.length-11, str.length-1);
+            document.getElementById("fifth").innerText = "The substring containing first 10 chars is : " + str.slice(0,9);
+            document.getElementById("sixth").innerText = "The substring containing last 20 chars is : " + str.slice(-20);
+            document.getElementById("seventh").innerText = "The first occurence of i is at index is : " + str.indexOf("i");
+            document.getElementById("eighth").innerText = "The first occurence of i is after or at index 10 is : " + str.indexOf("i",10);
+            document.getElementById("ninth").innerHTML = "The array form of str is : [" + str.split(" ") + "]";
+            document.getElementById("tenth").innerHTML = "The string after replacing Lorem with Hello is :" + str.replace("Lorem","Hello");
+            document.getElementById("eleventh").innerHTML = "The uppercase version : " + str.toUpperCase();
+            document.getElementById("twelfth").innerHTML = "The lowercase version : " + str.toLowerCase();
+
+        });
+        
     </script>
 </head>
 <body>
-    <p id="first"></p>
-    <p id="second"></p>
-    <p id="third"></p>
+    <section>
+        <p id="zeroth"></p>
+        <p id="first"></p>
+        <p id="second"></p>
+        <p id="third"></p>
+        <p id="fourth"></p>
+        <p id="fifth"></p>
+        <p id="sixth"></p>
+        <p id="seventh"></p>
+        <p id="eighth"></p>
+        <p id="ninth"></p>
+        <p id="tenth"></p>
+        <p id="eleventh"></p>
+        <p id="twelfth"></p>
+    </section>
+    
 </body>
 </html>
