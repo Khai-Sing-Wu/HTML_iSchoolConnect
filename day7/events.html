@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Creation</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 400px;
+            background-color: rgb(7, 170, 170);
+            padding: 5px;
+            margin: 50px auto;
+            border: 1px solid transparent;
+            overflow: auto;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.837);
+            font-size: 30px;
+            float: left;
+            font-size: 30px;
+            font-family: Arial;
+            text-align: center;
+            line-height: 100px;
+            margin : 5px;
+
+        }
+    </style>
+    <script>
+        onload =  init;
+        var count = 1;
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",addBoxHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click",stopBoxHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click",removeFirstBoxHandler);
+            document.getElementsByTagName("button")[3].addEventListener("click",removeLastBoxHandler);
+        }
+        function addBoxHandler(){
+            var element = document.createElement("div");
+            element.innerText = count;
+            document.getElementsByClassName("container")[0].appendChild(element);
+            count++;
+            console.log("box added");
+        }
+        function stopBoxHandler(){
+            document.getElementsByTagName("button")[0].removeEventListener("click",addBoxHandler);
+            document.getElementsByTagName("button")[1].removeEventListener("click",stopBoxHandler);
+            document.getElementsByTagName("button")[2].removeEventListener("click",removeLastBoxHandler);
+            console.log("stopped operations");
+        }
+        function removeFirstBoxHandler(){
+            var element = document.getElementsByClassName("container")[0].firstChild;
+            if(element){
+                document.getElementsByClassName("container")[0].removeChild(element);
+                console.log("removed first box");
+            }else{
+                alert("div underflow");
+            }
+        }
+        function removeLastBoxHandler(){
+            var element = document.getElementsByClassName("container")[0].lastChild;
+            if(element){
+                document.getElementsByClassName("container")[0].removeChild(element);
+                count--;
+                console.log("removed last box");
+            }else{
+                alert("div underflow");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+
+    <hr>
+    <div class="container"></div>
+</body>
+</html>

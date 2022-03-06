@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <script>
+       onload = function(){
+            //alert(document.body.childNodes.length);
+            //alert(document.body.children.length);
+            document.body.children[0].innerText = "Updated Content";
+            console.log(document.body.children[3].children[0].childNodes[0].nodeValue);
+            console.log(document.body.children[3].children[0].innerHTML);
+            console.log(document.body.children[3].children[0].innerText);
+            console.log(document.body.children[3].children[0].textContent);
+       }
+       
+    </script>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At officia ad dolor ipsam neque beatae consectetur, nemo, repudiandae, dolore obcaecati natus doloremque non! Quaerat, sapiente doloremque molestiae assumenda eos aliquid.
+    </p> 
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium repellat perferendis molestiae fugiat odio, vitae, sapiente repudiandae libero provident eum maxime dolor rem consectetur odit excepturi at itaque ducimus ab?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tenetur exercitationem? Ducimus, doloribus dolorum dolores possimus quas, odio deserunt perspiciatis voluptates dolor nemo maxime iusto tempore fuga? Labore, repellendus earum.
+    </p>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+</body>
+</html>
