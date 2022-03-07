@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax JSON Templates</title>
+    <style>
+        #log{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+            border: 1px solid black;
+            background-color: silver;
+            overflow: auto;
+        }
+        .box{
+            float: left;
+            margin: 10px;
+            width: 300px;
+            background-color: rgb(87, 81, 81);
+        }
+        .box img{
+            width: 300px;
+        }
+        .box h1{
+            margin: 2px;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Trebuchet MS';
+            background-color: rgb(7, 5, 5);
+            color: rgb(157, 157, 157);
+        }
+        .box h2,h3{
+            margin: 0px;
+            padding: 5px;
+            font-family: 'Trebuchet MS';
+            font-size: 16px;
+            background-color: rgb(87, 81, 81);
+            color: rgb(228, 210, 210);
+
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log("ReadyState Value : ",xhr.readyState);
+                if(xhr.status == 200 && xhr.readyState == 4){
+                    var herodata = JSON.parse(xhr.responseText).herolist;
+                    console.log(herodata.length);
+                    for(var i = 0; i < herodata.length ; i++ ){
+                        document.getElementById("log").innerHTML +=
+                        "<div class='box'><h1>"+ herodata[i].title+"</h1><h2>Full Name : "+ 
+                        herodata[i].firstname+" "+ herodata[i].lastname+"</h2><img src='"+
+                        herodata[i].poster+"' alt = 'hero'><h3>City : "+ 
+                        herodata[i].city+"</h3><h3>Ticket Price : "+ herodata[i].ticketprice+"</h3><h3>Release Date : "+
+                        herodata[i].releasedate+"</h3></div>"  
+                    }   
+                }else{
+                  console.log(xhr.readyState);
+                }    
+            };
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0].onclick = function(){
+                xhr.open("get","heroes-data-simple.json",true);
+                xhr.send();
+            };
+        });
+    </script>
+</head>
+<body>
+        <button>Fetch Data</button> 
+        <div id="log"></div>
+</body>
+</html>

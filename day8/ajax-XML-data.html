@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax fundamentals</title>
+    <style>
+        button{
+            margin: 10px auto;
+            display: block;
+        }
+        div{
+            width: 600px;
+            height: 200px;
+            margin: 50px auto;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log("ReadyState Value : ",xhr.readyState);
+                if(xhr.status == 200 && xhr.readyState ==4){
+                    var hero = xhr.responseXML.getElementsByTagName("hl");
+                    for(var i = 0; i < hero.length ; i++ ){
+                        //document.getElementById("hl").innerHTML +="<li>"+hero[i].firstChild.nodeValue+"</li>";
+                        document.getElementById("hl").innerHTML +=
+                        "<li>" + hero[i].querySelector("title").innerHTML+"</li>";
+                    }
+                    
+                }else{
+                   // document.getElementById("log").innerText += "XHR Status : " + xhr.status + " | XHR Status Text : "+ xhr.statusText;
+                }
+            };
+        document.addEventListener("DOMContentLoaded",function(){
+            document.getElementsByTagName("button")[0].addEventListener("click",function(){
+                xhr.open("get","heroes-data-simple.xml",true);
+                xhr.send();
+            })
+        })
+    </script>
+</head>
+<body>
+        <button> Fetch Data</button>
+        <div id="log"></div> 
+        <ol id = "hl"></ol>
+</body>
+</html>
