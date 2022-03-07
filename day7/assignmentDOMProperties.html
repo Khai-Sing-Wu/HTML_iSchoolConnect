@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties</title>
+        <style>
+            label{
+                display: block;
+                padding: 10px;
+            }
+        </style>
+        <script>
+            addEventListener("load",init);
+            function init(){
+                getTitle();
+                setFormPlaceholder();
+                countImages();
+                countLinks();
+                getDomain();
+                getCookies();
+                getScripts();
+
+            }
+
+            function getTitle(){
+                var dTitle = document.title;
+                var element = document.createElement("p");
+                element.innerHTML = "The title of the page : " + dTitle;
+                document.getElementsByClassName("newData")[0].appendChild(element);
+            }
+
+            function setFormPlaceholder(){
+                var loginInfo = document.forms.userData;
+                //document.forms['userData'];
+                userData.elements.uname.placeholder = 'xyz@gmail.com';
+                userData.elements.upass.placeholder = 'password';
+            }
+
+            function countImages(){
+                var pageImages = document.images;
+                var element = document.createElement("p");
+                element.innerHTML = "The no of images in  the page : " + pageImages.length;
+                document.getElementsByClassName("newData")[0].appendChild(element);
+            }
+
+            function countLinks(){
+                var pageLinks = document.links;
+                var element = document.createElement("p");
+                element.innerHTML = "The no of links in  the page : " + pageLinks.length;
+                document.getElementsByClassName("newData")[0].appendChild(element);
+            }
+
+            function getDomain(){
+                var pageDomain = document.domain;
+                var element = document.createElement('p');
+                element.innerText = "The domain is : " + pageDomain;
+                document.getElementsByClassName("newData")[0].appendChild(element);
+            }
+            function getCookies() {
+            var pageCookies = document.cookie;
+            var element = document.createElement("p");
+            element.innerText = "Cookies : " + pageCookies;
+            document.getElementsByClassName('newData')[0].appendChild(element);
+            }
+
+            function getScripts(){
+                var pageScripts = document.scripts;
+                var element = document.createElement('p');
+                element.innerText = "The no of scripts : " + pageScripts.length;
+                document.getElementsByClassName("newData")[0].appendChild(element);
+                
+            }
+
+
+
+
+        </script>
+</head>
+<body>
+    <div class="newData">
+        <img src="images/scarletwitch.jpg">
+        <img src="images/blackwidow.jpg">
+
+    </div>
+    <form name="userData">
+        <label > User Name </label>
+        <input type="text" name="uname"/>
+        <label> Password  </label>
+        <input type="text" name="upass"/>
+        <button> Submit</button>
+
+    </form>
+    
+</body>
+</html>
