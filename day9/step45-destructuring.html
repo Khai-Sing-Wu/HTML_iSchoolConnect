@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure</title>
+    <script>
+        var hero = {
+            firstname : "Tony",
+            lastname : "stark",
+            title : "Ironman",
+            power : 7,
+            city : "New York"
+        };
+        console.log(hero.title);
+        /*
+        var temphero = hero;
+        console.log(hero.title, temphero.title);
+        temphero.title = "IRONMAN"; 
+        console.log(hero.title, temphero.title);
+        */
+        /*
+        var heroTitle = hero.title;
+        var heroFirstName = hero.firstname;
+        var heroLastName = hero.lastname;
+        var heroPower = hero.power;
+        var heroCity = hero.city;
+        */
+       /*
+        var heroTitle = hero.title,
+            heroFirstName = hero.firstname,
+            heroLastName = hero.lastname,
+            heroPower = hero.power,
+            heroCity = hero.city;
+        */
+
+        var { title : heroTitle,
+                firstname : heroFirstName,
+                lastname : heroLastName,
+                power : heroPower,
+                city : heroCity
+            } = hero;
+
+        console.log(heroTitle);
+        console.log(heroFirstName);
+        console.log(heroLastName);
+        console.log(heroPower);
+        console.log(heroCity);
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
