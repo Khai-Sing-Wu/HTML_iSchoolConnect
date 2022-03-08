@@ -30,11 +30,18 @@
             }
             return total;
         }
+        /*
         console.log(adder(11));
         console.log(adder(11,12));
         console.log(adder(11,12,13));
         console.log(adder(11,12,13,14));
         console.log(adder(11,12,13,14,15));
+        */
+
+        var arr = [1,2,3,4,5];
+        console.log(adder(...arr));
+        // ...arr is referred to as spread syntax when used to pass array elements as parameters
+        // ...nums would be used to implement undefined number of paramters in a function
     </script>
 </head>
 <body>
