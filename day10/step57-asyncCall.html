@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+         let asyncCall1= function(){
+            return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(false){
+                    resolve("Respone from Async call 1");
+                }else{
+                    reject("Reject message from Async call 1");
+                }
+            },1000)
+            })
+        };
+
+        let asyncCall2= function(){
+            return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Respone from Async call 2");
+                }else{
+                    reject("Reject message from Async call 2");
+                }
+            },2000)
+            })
+        };
+
+        let asyncCall3= function(){
+            return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Respone from Async call 3");
+                }else{
+                    reject("Reject message from Async call 3");
+                }
+            },3000)
+            })
+        };
+        //all
+        /*
+        Promise
+        .all([asyncCall1(), asyncCall2(), asyncCall3()])
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+        .finally(()=>console.log("All promises are completed"))
+        */
+       //promise.any
+       /*
+       Promise
+        .any([asyncCall1(), asyncCall2(), asyncCall3()])
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+        .finally(()=>console.log("One of the promises is completed"))
+        */ 
+
+        //Promise.race
+        Promise
+        .race([asyncCall1(), asyncCall2(), asyncCall3()])
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+        .finally(()=>console.log("Promice race is completed"))
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
