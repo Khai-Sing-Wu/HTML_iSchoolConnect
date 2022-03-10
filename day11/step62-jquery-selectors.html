@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Selectors</title>
+    <script src="lib/jquery-3.6.0.js"></script>
+    <script>
+        $(()=>{
+            //$("li")[0].innerHTML = "Selected";
+            //$("h1,h2").css("border","2px solid red");
+            //$("li:first-child:first").css("border","2px solid red");
+            $("li:contains('3')").css("border","2px solid red");
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+    <hgroup>
+        <h1> first h1</h1>
+        <h1> second h1</h1>
+        <h2> first h2</h2>
+        <h2> second h2</h2>
+    </hgroup>
+    
+</body>
+</html>

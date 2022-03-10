@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        //ES7
+        class Person{
+            city = "My City";
+            constructor(ncity="My City"){
+                this.city = ncity;
+            }
+        };
+        class Hero extends Person{
+            firstname = "Bruce";
+            lastname = "Wayne";
+            _secret = "The Dark Knight";
+            static version = 1001;
+
+            constructor(fname, lname , ncity){
+                super(ncity);
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get secret(){
+                return this._secret;
+            }
+            set secret(nsecret){
+                this._secret = nsecret;
+            }
+        };
+
+        let hero = new Hero("Kal","el","Kryptonopolis");
+        console.log(hero.firstname, hero.lastname);
+        console.log(hero.fullname());
+        console.log(hero.secret); // can access secret but is not recommended due to standards
+        console.log(hero.city);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
