@@ -1,0 +1,83 @@
+create categories
+    a1, a2 and a3
+create answers options for each question which can have single or multiple answer question.
+
+Proof of Ownership
+
+Theft details
+
+
+
+
+
+Have you lost your vehicle?                                 Yes / No
+
+Are you the registered owner?                               Yes / No
+
+Type of Ownership?                                          Personal / Company owned
+
+Category of usage                                           Private / Commercial
+
+
+
+Proof Of Ownership.                                         
+
+Valid Insurance?
+
+Select vehicle type?                                        Two Wheeler / Three Wheeler / Four Wheeler / Other
+If Other, please specify.                                    
+
+
+Last known location of vehicle.
+
+Time of theft                                              
+
+Evidence of theft?        
+
+
+
+
+create categories
+create answer options for each question which can be 2( single answer ), 4( multiple answers ) type of answers
+create questions and select answer type
+-------------------------------------------------------------------------------------------
+
+
+create question category for ex a1, a2 and a3
+create answer category single answer multiple answers 
+
+create questions and select answer type
+
+
+what did you have for breakfast ?
+    veg or non veg
+
+    indian 
+    english
+    continental
+    chinese
+
+
+select your vehical type ?
+    2 wheeler
+    4 wheeler
+
+    was it a personal vehical used commercial purposes
+    company owned and was used for commertial purposes
+    was it a personal vehical used for private 
+    was it a company vehical used for private
+
+
+Step 1
+create wireframe
+    draw.io
+
+Step 2
+create UI 
+
+Step 3
+create Logic for UI
+
+
+
+
