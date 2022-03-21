@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script>
+        function addCategory(){
+            let qCat = document.getElementById('q-cat');
+            let cat = qCat.value;
+
+            let nOption = `<option value="${cat}">"${cat}"</option>`;
+
+            let element = document.getElementById("select-cat");
+            element.innerHTML += nOption;
+        }
+        function addDomain(){
+            let qDom = document.getElementById('q-dom');
+            let dom = qDom.value;
+
+            let nOption = `<option value="${dom}">"${dom}"</option>`;
+
+            let element = document.getElementById("select-dom");
+            element.innerHTML += nOption;
+        }
+
+        function addQuestion(){
+
+        }
+
+        function answerHandler(temp){
+            var val = temp.value;
+            var element = document.getElementById("answers");
+            for(let i= 1; i<=val; i++)
+            {
+                let ansLabel = `<label for="ans-${i}">Answer-${i} :</label>`;
+                let ansInput = `<input id="ans-${i}"/><br>`;
+                let pointLabel = `<label for="point-${i}">Point :</label>`;
+                let pointInput = `<input id="point-${i}"/><br><br>`;
+                element.innerHTML += ansLabel;
+                element.innerHTML += ansInput;
+                element.innerHTML += pointLabel;
+                element.innerHTML += pointInput;
+            }
+        }
+
+    </script>
+</head>
+<body>
+        <label for="q-cat">Enter Question catgeory :</label>
+        <input type="text" id="q-cat"/>
+        <button onclick="addCategory()">Add catgeory</button>    
+        <br>
+        <br>
+        <label for="q-dom">Enter domain :</label>
+        <input type="text" id="q-dom"/>
+        <button onclick="addDomain()">Add domain</button>
+    
+        <hr>
+        <form action="#" method="post">
+            <label for="select-cat">Select Category :</label>
+            <select id="select-cat">
+                <option value=""></option>
+            </select>
+            <br>
+            <br>
+            <label for="select-dom">Select Domain :</label>
+            <select id="select-dom">
+                <option value=""></option>
+            </select>
+            <br>
+            <br>    
+            <label for="ques-phrase">Question :</label>
+            <input type="text" id="ques-phrase"/>
+            <br>
+            <br>
+
+            <label for="ques-code">Question Code :</label>
+            <input type="text" for="ques-code"/>
+            <br>
+            <br>
+
+            <label for="ans-count">Select Answer type</label>
+            <select id="ans-count" onchange="answerHandler(this)">
+                <option value=""></option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            <br>
+            <div id="answers"></div>
+        <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
