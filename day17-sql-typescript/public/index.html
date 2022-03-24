@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src= "../node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+        let socket = io();
+        let username = "Guest";
+        function serverMessageHandler(res){
+            document.querySelector(".container").innerHTML += `<p>${ res.username } : ${ res.message }</p>`
+        }
+        function loginHandler(){
+            username = document.getElementById("username").value;
+            document.getElementsByClassName("loginBox")[0].setAttribute("style","display : none");
+            document.getElementsByClassName("chatBox")[0].setAttribute("style","display : block");
+            document.querySelector("#welcome").innerText=username;
+        }
+        function sendHandler(){
+            socket.emit("clientMessage",{ "username" : username , "message" : document.getElementById("chatmessage").value});
+            document.getElementById("chatmessage").value = "";
+        }
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByClassName("chatBox")[0].setAttribute("style","display : none");
+            socket.addEventListener("serverMessage",serverMessageHandler);
+            //document.getElementById("sendBtn").addEventListener("click",clickHandler);
+            document.getElementById("login").addEventListener("click",loginHandler);
+            document.querySelector("#welcome").innerText=username;
+            document.getElementById("sendBtn").addEventListener("click", sendHandler);
+                
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello <span id="welcome"></span></h1>
+    <div class="loginBox">
+        <input id="username">
+        <button id="login"> Login</button>
+    </div>
+
+    <div class ="chatBox">
+        <textarea id="chatmessage"></textarea>
+        <br>
+        <button id="sendBtn">Send</button>
+    </div>
+    <hr>
+    <div class="container"></div>
+    <!--
+    <input type="text" id = "cMessage"/>
+    <button id ="sendBtn">Send Message</button>
+    -->
+    
+</body>
+</html>
