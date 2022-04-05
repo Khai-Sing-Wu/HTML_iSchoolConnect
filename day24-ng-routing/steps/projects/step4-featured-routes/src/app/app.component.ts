@@ -5,6 +5,11 @@ import { Component } from '@angular/core';
   template: `
   <h1>Application Component</h1>
   <hr>
+  <router-outlet></router-outlet>
+
+
+  
+  <!--
   <a [routerLink]="['']">Home</a> | 
   <a [routerLink]="['hero']"> Hero</a> | 
   <a [routerLink]="['addhero']">Add Hero</a> | 
@@ -14,7 +19,7 @@ import { Component } from '@angular/core';
   <a [routerLink]="['movies']">Movie List</a> | 
   <a [routerLink]="['addmovie']">Add Movie</a> | 
   <a [routerLink]="['editmovie']">Edit Movie</a>
-  <router-outlet></router-outlet>
+  -->
   `
 })
 export class AppComponent {

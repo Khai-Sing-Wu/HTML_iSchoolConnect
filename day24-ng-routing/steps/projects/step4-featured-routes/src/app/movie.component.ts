@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-heroadd',
+  selector: 'app-movie',
   template: `
-    <p> movie works! </p>
+  <h2> Movies database</h2>
+  <li> <a [routerLink]="['movies']">Get Movie List</a> </li>
+
+  <router-outlet></router-outlet>
+  <a [routerLink]="['']">Back to Master Page</a>
   `,
   styles: []
 })

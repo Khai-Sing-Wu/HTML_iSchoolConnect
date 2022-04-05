@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from './hero.service';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'app-movielist',
@@ -9,29 +10,24 @@ import { HeroesService } from './hero.service';
       <tr> 
         <th>Sl</th>
         <th>Title</th>
-        <th>MoVie List</th>
+        <th>Movie List</th>
     </thead>
     <tbody>
-      <tr *ngFor="let hero of herolist">
-        <td> {{ hero.sl }}</td>
-        <td> {{ hero.title }}</td>
-        <td>
-          <ul> 
-            <li *ngFor='let movie of hero.movieslist' > {{ movie.title }} </li>
-          </ul>
-        </td>
+      <tr *ngFor="let movie of movielist">
+        <td> {{ movie.id }}</td>
+        <td> {{ movie.title }}</td>
+        <td> {{ movie.year }} </td>
       </tr>
-    </tbody>
+    </tbody>  
   </table>
   `,
   styles: []
 })
 export class MovielistComponent implements OnInit {
-  herolist :any;
-  constructor(private hs:HeroesService) { }
+  movielist :any;
+  constructor(private ms:MovieService) { }
 
   ngOnInit() {
-    this.herolist = this.hs.getHeroes();
+    this.movielist = this.ms.getMovies();
   }
-
 }

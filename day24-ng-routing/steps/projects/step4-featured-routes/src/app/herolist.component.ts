@@ -10,15 +10,21 @@ import { HeroesService } from './hero.service';
         <th>Sl</th>
         <th>Title</th>
         <th>Full Name</th>
+        <th> More Details </th>
     </thead>
     <tbody>
       <tr *ngFor='let hero of heroslist'>
-        <td> {{ hero.sl }}</td>
-        <td> {{ hero.title }}</td>
-        <td> {{ hero.firstname + " " + hero.lastname}}</td>
+        <td> {{ hero.id }}</td>
+        <td> {{ hero.name }}</td>
+        <td> {{ hero.biography['full-name']}}</td>
+        <td>
+        <a [routerLink] = "['herodetail', hero.id]" >Click for detail </a>
+        </td>
       </tr>
     </tbody>
   </table>
+  <router-outlet></router-outlet>
+  
   `,
   styles: []
 })
