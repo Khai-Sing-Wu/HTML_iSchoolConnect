@@ -4,7 +4,7 @@ import { HeroesService } from './hero.service';
 @Component({
   selector: 'app-herolist',
   template: `
-   <table>
+  <table class='table table-striped tabled-bordered'>
     <thead>
       <tr> 
         <th>Sl</th>
@@ -18,11 +18,12 @@ import { HeroesService } from './hero.service';
         <td> {{ hero.name }}</td>
         <td> {{ hero.biography['full-name']}}</td>
         <td>
-        <a [routerLink] = "['herodetail', hero.id]" >Click for detail </a>
+        <a [routerLink] = "['/herodetail', hero.id]" >Click for detail </a>
         </td>
       </tr>
     </tbody>
   </table>
+  <a [routerLink]="['']">Back to Master Page</a>
   <router-outlet></router-outlet>
   
   `,

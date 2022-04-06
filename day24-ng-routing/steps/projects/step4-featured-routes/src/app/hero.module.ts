@@ -14,14 +14,11 @@ import { CommonModule } from "@angular/common";
     declarations:[HeroaddComponent, HeroeditComponent, HerolistComponent , HeroComponent, HeroDetailComp ],
     imports:[
     BrowserModule, CommonModule , FormsModule, RouterModule.forChild([
-        { path : "hero" , component:HeroComponent,children:[
-            { path : "heroes" , component:HerolistComponent ,children: [
-                { path : "addhero" , component:HeroaddComponent },
-                { path: "herodetail/:selectHeroId", component: HeroDetailComp, children : [
-                    { path : "edithero/:power/:hname" , component:HeroeditComponent}                    
-                ]}
-            ]}
-        ]}
+        { path : "hero" , component:HeroComponent} ,
+        { path : "heroes" , component:HerolistComponent},
+        { path : "addhero" , component:HeroaddComponent },
+        { path: "herodetail/:selectHeroId", component: HeroDetailComp, children :[
+        { path : "edithero/:power/:hname" , component:HeroeditComponent}]}                    
         ])
     ],
     exports:[HeroComponent, HeroaddComponent, HeroeditComponent, HeroDetailComp, HerolistComponent],

@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-movie',
   template: `
   <h2> Movies database</h2>
-  <li> <a [routerLink]="['movies']">Get Movie List</a> </li>
-
+  <li> <a [routerLink]="['/movies']">Get Movie List</a> </li>
   <router-outlet></router-outlet>
   <a [routerLink]="['']">Back to Master Page</a>
   `,

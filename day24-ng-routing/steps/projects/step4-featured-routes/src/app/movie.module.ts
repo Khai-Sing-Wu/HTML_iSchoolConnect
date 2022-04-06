@@ -6,14 +6,17 @@ import { RouterModule } from "@angular/router";
 import { MovieComponent } from "./movie.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { MovieService } from "./movie.service";
+import { MovieDetailComponent } from "./moviedetail.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-    declarations:[MovieComponent, MovieaddComponent, MovieeditComponent, MovielistComponent],
-    imports:[BrowserModule,RouterModule.forChild([
-        { path : "movie" , component:MovieComponent, children : [
+    declarations:[MovieComponent, MovieaddComponent, MovieeditComponent,MovieDetailComponent, MovielistComponent],
+    imports:[BrowserModule,FormsModule,RouterModule.forChild([
+        { path : "movie" , component:MovieComponent},
         { path : "movies" , component:MovielistComponent },
         { path : "addmovie" , component:MovieaddComponent },
-        { path : "editmovie" , component:MovieeditComponent }, 
+        { path : "moviedetail/:selectMovieId", component:MovieDetailComponent, children :[
+            { path : "editmovie/:title/:director" , component:MovieeditComponent }
         ]}
     ])],
     providers: [MovieService],

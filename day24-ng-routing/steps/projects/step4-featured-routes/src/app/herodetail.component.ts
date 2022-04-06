@@ -15,6 +15,7 @@ import { HeroesService } from "./hero.service";
   <a [routerLink] = "['edithero',selectedHero.powerstats.power, selectedHero.name]">Set Power of {{ selectedHero.name }}</a>
   <hr>
   <router-outlet></router-outlet>
+  <a [routerLink]="['']">Back to Master Page</a>
     `
 })
 export class HeroDetailComp { 
