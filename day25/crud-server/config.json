@@ -1,0 +1,6 @@
+{
+    "cloudDB" : "mongodb+srv://wumark46:password@mycluster.2zbbx.mongodb.net/onlinedb?retryWrites=true&w=majority",
+    "localDB" : "",
+    "port" : "5050",
+    "host" : "localhost"
+}
