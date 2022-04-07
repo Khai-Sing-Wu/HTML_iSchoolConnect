@@ -28,13 +28,14 @@ import { ISchoolUserService } from "./user.services";
           </tr>
         </tbody>
       </table>
-      <button class='btn btn-warning' [routerLink]="['/edit']" [queryParams]  = "{id:userToUpdate._id}"> Edit {{ userToUpdate.username}} </button>
+      <button *ngIf='showEditButton' class='btn btn-warning' [routerLink]="['/edit']" [queryParams]  = "{id:userToUpdate._id}"> Edit {{ userToUpdate.username}} </button>
       </div>
       <router-outlet></router-outlet>
     
     `
 })
 export class UserListComponent {
+    showEditButton = false;
     userdata:Array<User> = [
         { 
           username : 'Batman',
@@ -61,6 +62,7 @@ export class UserListComponent {
     editUser(user:any){
         this.us.getUserToEdit(user._id).subscribe((res:any) => {
             this.userToUpdate = res;
+            this.showEditButton = true;
         })
       }
 
